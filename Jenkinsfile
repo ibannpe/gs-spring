@@ -29,10 +29,5 @@ pipeline {
                 sh "echo "hello-world"" 
             }
         }
-    agent {
-        any {
-            sh "docker run  -d hello-world"
-        }
-    }
     }
 }
