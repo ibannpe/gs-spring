@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh 'docker build -t "gs-1" .' 
+                sh 'deploy.sh .' 
             }
         }
     }
