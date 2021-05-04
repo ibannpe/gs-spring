@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gs
-        image: gs
+        image: ibannpe/test-gs:v0.1
         imagePullPolicy: Always
         ports:
         - name: gs
@@ -29,7 +29,7 @@ metadata:
   labels:
     app: gs
 spec:
-  type: LoadBalancer
+  type: LoadBalancer 
   ports:
   - port: 8080
   selector:
