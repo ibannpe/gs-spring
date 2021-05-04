@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh 'echo "Gola Mundo"' 
+                sh 'docker build -t "gs-1" .' 
             }
         }
     }
