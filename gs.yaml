@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gs
+spec:
+  selector:
+    matchLabels:
+      app: gs
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: gs
+    spec:
+      containers:
+      - name: gs
+        image: gs
+        imagePullPolicy: Always
+        ports:
+        - name: gs
+          containerPort: 8080
+          protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gs-lb
+  labels:
+    app: gs
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: gs
