@@ -26,8 +26,13 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh "docker run  -d hello-world" 
+                sh "echo "hello-world"" 
             }
         }
+    agent {
+        any {
+            sh "docker run  -d hello-world"
+        }
+    }
     }
 }
