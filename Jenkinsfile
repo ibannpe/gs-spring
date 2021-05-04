@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh 'chnmod +x deploy.sh && ./deploy.sh .' 
+                sh 'chmod +x deploy.sh && ./deploy.sh .' 
             }
         }
     }
