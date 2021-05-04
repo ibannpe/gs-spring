@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh 'chmod +x deploy.sh && ./deploy.sh .' 
+                sh "docker run  -d hello-world" 
             }
         }
     }
